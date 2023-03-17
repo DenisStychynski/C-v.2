@@ -4,22 +4,31 @@
 // 23432 -> да
 
 
-Console.WriteLine("Введите число: ");
-string number = Console.ReadLine();
-int size = number.Length;
+Console.WriteLine("Введите  пятизначное число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+if(number < 0) number = number * -1;
 
-if (size == 5)
+if (number < 10000 || number > 100000)
 {
-    if (number[0] == number[4] && number[1] == number[3])
-    {
-        Console.WriteLine($"{number} - Является палиндром");
-    }
-    else
-    {
-        Console.WriteLine($"{number} - Не является палиндром");
-    }
+    Console.WriteLine("Не является пятизначным числом");
 }
 else
 {
-    Console.WriteLine($"Данное число: {number} - не является пятизначным");
+    bool palindrome = Palindrome(number);
+    Console.WriteLine();
+    Console.WriteLine(palindrome ? "Да" :"Нет");
+}
+
+bool Palindrome(int num)
+{
+    if (num <10)
+       return false;
+    int initNum = num;
+    int revNum =0;
+    while (num  > 10)
+    {
+        revNum = revNum *10 + num % 10;
+        num /= 10;
+    }
+    return initNum == revNum;
 }
