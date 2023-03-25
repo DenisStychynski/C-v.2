@@ -15,4 +15,4 @@ double k2 = Convert.ToDouble(Console.ReadLine());
 double x = -(b1 - b2) / (k1 - k2);
 double y = k1 * x + b1;
 
-Console.Write($"\n Точка пересечения двух прямых: [{x},{y}]");
+Console.Write($"Точка пересечения двух прямых: [{x},{y}]");
