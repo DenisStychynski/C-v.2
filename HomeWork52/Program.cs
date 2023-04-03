@@ -8,8 +8,10 @@
 
 Console.Write("Введите размерность rows массива: ");
 int rows = Convert.ToInt32(Console.ReadLine());
+
 Console.Write("Введите размерность columns массива: ");
 int columns = Convert.ToInt32(Console.ReadLine());
+
 int[,] matrix = new int[rows, columns];
 
 void CreateMatrixInt(int rows, int columns)
