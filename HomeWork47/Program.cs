@@ -32,12 +32,12 @@ void PrintMatrix(double[,] matrix)
         Console.Write("|");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-
             Console.Write(string.Format(" {0:F1} ", matrix[i, j]));
         }
         Console.WriteLine("|");
     }
 }
+
 double[,] array2d = CreateMatrixRndInt(3, 4);
 
 PrintMatrix(array2d);
