@@ -14,14 +14,19 @@
 
 Console.Write("Введите размерность rows массива: ");
 int rows = Convert.ToInt32(Console.ReadLine());
+
 Console.Write("Введите размерность columns массива: ");
 int columns = Convert.ToInt32(Console.ReadLine());
+
 int[,] matrix = new int[rows, columns];
+
 Console.Write("Введите позицию строки: ");
 int rowsNum = Convert.ToInt32(Console.ReadLine());
+
 Console.Write("Введите позицию столбца: ");
 int columnsNum = Convert.ToInt32(Console.ReadLine());
-void CreateMatrixRndInt(int rows, int columns)
+
+void CreateMatrixInt(int rows, int columns)
 {
     int i, j;
     Random rand = new Random();
@@ -36,10 +41,12 @@ void CreateMatrixRndInt(int rows, int columns)
         Console.WriteLine("|");
     }
 }
-CreateMatrixRndInt(rows, columns);
+
 if (rowsNum < 1 || columnsNum < 1)
     Console.Write("Позиции строк не могут быть отрицательными");
+
 else if (rowsNum <= rows + 1 && columnsNum <= columns + 1)
     Console.Write($"Значение элемента равно {matrix[rowsNum - 1, columnsNum - 1]}");
+    
 else Console.Write("Такого элемента нет в массиве");
-
+CreateMatrixInt(rows, columns);
